@@ -12,7 +12,6 @@
 		FAB51D20282D844C0044BB46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB51D1F282D844C0044BB46 /* ViewController.swift */; };
 		FAB51D23282D844C0044BB46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB51D21282D844C0044BB46 /* Main.storyboard */; };
 		FAB51D25282D844E0044BB46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB51D24282D844E0044BB46 /* Assets.xcassets */; };
-		FAB51D28282D844E0044BB46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB51D26282D844E0044BB46 /* LaunchScreen.storyboard */; };
 		FAB51D33282D844E0044BB46 /* __1_reverse_wordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB51D32282D844E0044BB46 /* __1_reverse_wordsTests.swift */; };
 		FAB51D3D282D844E0044BB46 /* __1_reverse_wordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB51D3C282D844E0044BB46 /* __1_reverse_wordsUITests.swift */; };
 		FAB51D3F282D844E0044BB46 /* __1_reverse_wordsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB51D3E282D844E0044BB46 /* __1_reverse_wordsUITestsLaunchTests.swift */; };
@@ -42,7 +41,6 @@
 		FAB51D1F282D844C0044BB46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAB51D22282D844C0044BB46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAB51D24282D844E0044BB46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FAB51D27282D844E0044BB46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB51D29282D844E0044BB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAB51D2E282D844E0044BB46 /* 1.1-reverse-wordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "1.1-reverse-wordsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB51D32282D844E0044BB46 /* __1_reverse_wordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __1_reverse_wordsTests.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				FAB51D1F282D844C0044BB46 /* ViewController.swift */,
 				FAB51D21282D844C0044BB46 /* Main.storyboard */,
 				FAB51D24282D844E0044BB46 /* Assets.xcassets */,
-				FAB51D26282D844E0044BB46 /* LaunchScreen.storyboard */,
 				FAB51D29282D844E0044BB46 /* Info.plist */,
 			);
 			path = "1.1-reverse-words";
@@ -231,7 +228,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB51D28282D844E0044BB46 /* LaunchScreen.storyboard in Resources */,
 				FAB51D25282D844E0044BB46 /* Assets.xcassets in Resources */,
 				FAB51D23282D844C0044BB46 /* Main.storyboard in Resources */,
 			);
@@ -303,14 +299,6 @@
 				FAB51D22282D844C0044BB46 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FAB51D26282D844E0044BB46 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FAB51D27282D844E0044BB46 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
