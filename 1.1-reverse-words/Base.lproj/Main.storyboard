@@ -17,38 +17,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="61" translatesAutoresizingMaskIntoConstraints="NO" id="ubo-aX-Quq">
-                                <rect key="frame" x="94" y="167" width="226" height="237"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5f-0I-2p1">
-                                        <rect key="frame" x="0.0" y="0.0" width="226" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjS-WX-Lkj">
-                                        <rect key="frame" x="0.0" y="95" width="226" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Num-IF-9Me">
-                                        <rect key="frame" x="0.0" y="206" width="226" height="31"/>
-                                        <color key="backgroundColor" name="AccentColor"/>
-                                        <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="REVERSE IT!"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Text to reverse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5f-0I-2p1">
+                                <rect key="frame" x="0.0" y="334" width="414" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="YqY-hx-xls"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Num-IF-9Me">
+                                <rect key="frame" x="13" y="736" width="388" height="60"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="K46-hK-9T6"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="REVERSE IT!">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="reverseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9k-xO-ZHL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reverse Words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73c-DV-aAz">
+                                <rect key="frame" x="16" y="196" width="382" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This application will reverse your words. Please type text below " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gz-Zu-h4K">
+                                <rect key="frame" x="33" y="253" width="347" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjS-WX-Lkj">
+                                <rect key="frame" x="16" y="418.5" width="382" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="xXh-XF-Zne"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ubo-aX-Quq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="123" id="Rsb-0d-yGt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ubo-aX-Quq" secondAttribute="trailing" constant="94" id="edU-2c-e9k"/>
-                            <constraint firstItem="ubo-aX-Quq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="ym0-Ai-3al"/>
+                            <constraint firstItem="8Gz-Zu-h4K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="B7O-15-y1L"/>
+                            <constraint firstItem="73c-DV-aAz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BYb-F7-h4b"/>
+                            <constraint firstItem="8Gz-Zu-h4K" firstAttribute="top" secondItem="73c-DV-aAz" secondAttribute="bottom" constant="16" id="IDH-7i-Owa"/>
+                            <constraint firstItem="F5f-0I-2p1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="J1w-zo-KbK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Num-IF-9Me" secondAttribute="trailing" constant="13" id="KZi-2v-znF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JjS-WX-Lkj" secondAttribute="trailing" constant="16" id="Rv1-51-Eua"/>
+                            <constraint firstItem="JjS-WX-Lkj" firstAttribute="top" secondItem="F5f-0I-2p1" secondAttribute="bottom" constant="24.5" id="aVi-ak-Ykq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Num-IF-9Me" secondAttribute="bottom" constant="66" id="bVu-H5-YKM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="73c-DV-aAz" secondAttribute="trailing" constant="16" id="bdl-5j-KA5"/>
+                            <constraint firstItem="73c-DV-aAz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="152" id="cBi-a2-qH6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F5f-0I-2p1" secondAttribute="trailing" id="e7m-q1-0WH"/>
+                            <constraint firstItem="JjS-WX-Lkj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gYg-Lt-ZVD"/>
+                            <constraint firstItem="Num-IF-9Me" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="13" id="nCA-WM-VLd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Gz-Zu-h4K" secondAttribute="trailing" constant="34" id="nS2-TT-LRW"/>
+                            <constraint firstItem="F5f-0I-2p1" firstAttribute="top" secondItem="8Gz-Zu-h4K" secondAttribute="bottom" constant="40" id="slv-dM-Xch"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputText" destination="F5f-0I-2p1" id="rAZ-Ft-Y19"/>
+                        <outlet property="reverseButton" destination="Num-IF-9Me" id="74o-nd-ZQh"/>
+                        <outlet property="reverseTextView" destination="JjS-WX-Lkj" id="InS-1V-lHI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,6 +103,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
