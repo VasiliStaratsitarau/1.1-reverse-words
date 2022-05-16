@@ -20,12 +20,19 @@ class ViewController: UIViewController , UITextFieldDelegate {
 // ------------- Button .disabled as default --------------------------------------------
         reverseButton.isEnabled = false
         reverseButton.backgroundColor = nonActiveButtonColor
-        reverseButton.setTitleColor(UIColor.white, for: .normal)
+        reverseButton.setTitle("REVERSE IT!", for: .disabled)
+        reverseButton.setTitleColor(.white, for: .disabled)
+        
     }
+    
 // ------------- waiting text in textfield and acrivate Button --------------------------
     @objc func textChanged(_ textField: UITextField) {
         reverseButton.backgroundColor = activeButtonColor
         reverseButton.isEnabled = true
+        if inputText.text == "" {
+            reverseButton.isEnabled = false
+            reverseButton.backgroundColor = nonActiveButtonColor
+        }
     }
 // ------------- reverseButton func include switch with two cases -----------------------
     var counter = 0
@@ -47,8 +54,9 @@ class ViewController: UIViewController , UITextFieldDelegate {
                 reverseTextView.text = ""
                 reverseButton.isEnabled = false
                 reverseButton.backgroundColor = nonActiveButtonColor
-                reverseButton.setTitleColor(UIColor.white, for: .normal)
-            }
+              //  reverseButton.setTitleColor(.white, for: .normal)
+              //  reverseButton.setTitleColor(.white, for: .disabled)
+                }
             counter = 0
         default:
             break
