@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3933F92832DAB400C0CFFF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3933F82832DAB400C0CFFF /* Extensions.swift */; };
+		FA3933FB2832E7BF00C0CFFF /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA3933FA2832E7BF00C0CFFF /* Roboto-Regular.ttf */; };
+		FA3934002832EA0400C0CFFF /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA3933FF2832E9F200C0CFFF /* Roboto-Bold.ttf */; };
+		FA3934022833EEA400C0CFFF /* ChildButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3934012833EEA400C0CFFF /* ChildButton.swift */; };
 		FAB51D1C282D844C0044BB46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB51D1B282D844C0044BB46 /* AppDelegate.swift */; };
 		FAB51D1E282D844C0044BB46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB51D1D282D844C0044BB46 /* SceneDelegate.swift */; };
 		FAB51D20282D844C0044BB46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB51D1F282D844C0044BB46 /* ViewController.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA3933F82832DAB400C0CFFF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FA3933FA2832E7BF00C0CFFF /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		FA3933FF2832E9F200C0CFFF /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		FA3934012833EEA400C0CFFF /* ChildButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildButton.swift; sourceTree = "<group>"; };
 		FAB51D18282D844C0044BB46 /* 1.1-reverse-words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1.1-reverse-words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB51D1B282D844C0044BB46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB51D1D282D844C0044BB46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA3933FC2832E7FA00C0CFFF /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA3933FF2832E9F200C0CFFF /* Roboto-Bold.ttf */,
+				FA3933FA2832E7BF00C0CFFF /* Roboto-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		FAB51D0F282D844C0044BB46 = {
 			isa = PBXGroup;
 			children = (
@@ -98,10 +115,12 @@
 			isa = PBXGroup;
 			children = (
 				FAB51D1B282D844C0044BB46 /* AppDelegate.swift */,
+				FA3933F82832DAB400C0CFFF /* Extensions.swift */,
 				FAB51D1D282D844C0044BB46 /* SceneDelegate.swift */,
 				FAB51D1F282D844C0044BB46 /* ViewController.swift */,
-				FAB51D21282D844C0044BB46 /* Main.storyboard */,
+				FA3934012833EEA400C0CFFF /* ChildButton.swift */,
 				FAB51D24282D844E0044BB46 /* Assets.xcassets */,
+				FAB51D21282D844C0044BB46 /* Main.storyboard */,
 				FAB51D29282D844E0044BB46 /* Info.plist */,
 			);
 			path = "1.1-reverse-words";
@@ -120,6 +139,7 @@
 			children = (
 				FAB51D3C282D844E0044BB46 /* __1_reverse_wordsUITests.swift */,
 				FAB51D3E282D844E0044BB46 /* __1_reverse_wordsUITestsLaunchTests.swift */,
+				FA3933FC2832E7FA00C0CFFF /* fonts */,
 			);
 			path = "1.1-reverse-wordsUITests";
 			sourceTree = "<group>";
@@ -228,7 +248,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3933FB2832E7BF00C0CFFF /* Roboto-Regular.ttf in Resources */,
 				FAB51D25282D844E0044BB46 /* Assets.xcassets in Resources */,
+				FA3934002832EA0400C0CFFF /* Roboto-Bold.ttf in Resources */,
 				FAB51D23282D844C0044BB46 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,7 +278,9 @@
 			files = (
 				FAB51D20282D844C0044BB46 /* ViewController.swift in Sources */,
 				FAB51D1C282D844C0044BB46 /* AppDelegate.swift in Sources */,
+				FA3934022833EEA400C0CFFF /* ChildButton.swift in Sources */,
 				FAB51D1E282D844C0044BB46 /* SceneDelegate.swift in Sources */,
+				FA3933F92832DAB400C0CFFF /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
