@@ -44,3 +44,10 @@ extension UIColor {
 //
 //    setup()
 //}
+//        reverseButton.layer.cornerRadius = 14
+////------------- Button .disabled as default --------------------------------------------
+//        reverseButton.isEnabled = false
+//        reverseButton.backgroundColor = UIColor(hex: "#66afffff")
+//        reverseButton.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 17)
+//        reverseButton.setTitle("REVERSE IT!", for: .disabled)
+//        reverseButton.setTitleColor(.white, for: .disabled)

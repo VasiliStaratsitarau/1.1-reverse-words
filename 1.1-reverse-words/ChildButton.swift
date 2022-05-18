@@ -6,30 +6,21 @@
 //
 
 import UIKit
-//------------------------ Under constraction ---------------------------------
-//class ChildButton: UIButton {
-//
-//    var myValue: Int = 0
-//
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        setup()
-//        titleLabel?.font = UIFont(name: "Roboto-Bold", size: 17)
-//        isEnabled = false
-//        backgroundColor = UIColor(hex: "#66afffff")
-//        setTitle("REVERSE IT!", for: .disabled)
-//        setTitleColor(.white, for: .disabled)
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//
-//
-//        backgroundColor = UIColor(hex: "#66afffff")
-//    }
-//    private func setup() {
-//            layer.cornerRadius = 14
-//        }
-//
-//}
-//let defaultButton = ChildButton()
+
+class ChildButton: UIButton {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+        isEnabled = true
+        titleLabel?.font = UIFont(name: "Roboto-Regular", size: 17)
+        backgroundColor = UIColor(hex: "#66afffff")
+        setTitle("REVERSE IT!", for: .normal)
+        setTitleColor(.white, for: .disabled)
+        }
+        private func setup() {
+    layer.cornerRadius = 14
+    }
+}
+
+    
+
