@@ -19,34 +19,33 @@ class ViewController: UIViewController  {
         }
 //------------- waiting text in textfield and acrivate Button --------------------------
     @objc func textChanged(_ textField: UITextField) {
-        reverseButton.isEnabled = true
-        reverseButton.backgroundColor = UIColor(hex: "#007affff")
+           reverseButton.buttonEnable()
         if inputText.text == "" {
-            reverseButton.isEnabled = false
-            reverseButton.backgroundColor = UIColor(hex: "#66afffff")
+           reverseButton.buttonDisable()
         }
     }
 // ------------- reverseButton func include switch with two cases -----------------------
+    var buttonCounter = 0
     @IBAction func reverseButton(_ sender: ChildButton) {
-        switch sender.isSelected == false
-        {
-        case true :
+        buttonCounter += 1
+        switch buttonCounter {
+        case 1:
             if let text = inputText.text {
-            reverseTextView.text = text.split(separator: " ").map { String($0.reversed())}.joined(separator: " ")
-            reverseButton.setTitle("Clear", for: .normal)
-            sender.isSelected = true
+                reverseTextView.text = reverseWordsModule(text: text)
+                reverseButton.setTitle("Clear", for: .normal)
             }
-        case false:
+        case 2:
             if reverseTextView.text != "" {
-            inputText.text = ""
-            reverseTextView.text = ""
-            reverseButton.isEnabled = false
-            reverseButton.setTitle("REVERSE IT!", for: .normal)
-            reverseButton.backgroundColor = UIColor(hex: "#66afffff")
-            sender.isSelected = false
+                inputText.text = ""
+                reverseTextView.text = ""
+                reverseButton.buttonDisable()
+                reverseButton.setTitle("REVERSE IT!", for: .normal)
+                buttonCounter = 0
             }
+        default: break
         }
     }
 }
+
 
 
