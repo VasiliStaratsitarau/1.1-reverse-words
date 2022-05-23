@@ -17,14 +17,14 @@ class ViewController: UIViewController  {
         super.viewDidLoad()
         inputText.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
     }
-    //------------- waiting text in textfield and acrivate Button --------------------------
+//------------- waiting text in textfield and acrivate Button --------------------------
     @objc func textChanged(_ textField: UITextField) {
-        reverseButton.buttonEnable()
+            reverseButton.configure(isEnabled: true)
         if inputText.text == "" {
-            reverseButton.buttonDisable()
+            reverseButton.configure(isEnabled: false)
         }
     }
-    // ------------- reverseButton func include switch with two cases -----------------------
+// ------------- reverseButton func include switch with two cases -----------------------
     var isButtonStart = true
     @IBAction func reverseButton(_ sender: ChildButton) {
         
@@ -36,7 +36,7 @@ class ViewController: UIViewController  {
             if reverseTextView.text != "" {
                 inputText.text = ""
                 reverseTextView.text = ""
-                reverseButton.buttonDisable()
+                reverseButton.configure(isEnabled: false)
                 reverseButton.setTitle("REVERSE IT!", for: .normal)
             }
         }

@@ -8,27 +8,26 @@
 import UIKit
 
 class ChildButton: UIButton {
+    private enum Constant {
+        static let enabledColor = UIColor(hex: "#007affff")
+        static let disabledColor = UIColor(hex: "#66afffff")
+    }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+        setupUI()
+    }
+    private func setupUI() {
+        layer.cornerRadius = 14
         isEnabled = false
-        backgroundColor = UIColor(hex: "#66afffff")
+        backgroundColor = Constant.enabledColor
         titleLabel?.font = UIFont(name: "Roboto-Regular", size: 17)
         setTitle("REVERSE IT!", for: .normal)
         setTitleColor(.white, for: .disabled)
     }
-    private func setup() {
-        layer.cornerRadius = 14
-    }
-    func buttonEnable() {
-        isEnabled = true
-        backgroundColor = UIColor(hex: "#007affff")
-    }
-    func buttonDisable() {
-        isEnabled = false
-        backgroundColor = UIColor(hex: "#66afffff")
+    func configure(isEnabled: Bool) {
+        self.isEnabled = isEnabled
+        backgroundColor = isEnabled ? Constant.enabledColor : Constant.disabledColor
     }
 }
 
-    
 
