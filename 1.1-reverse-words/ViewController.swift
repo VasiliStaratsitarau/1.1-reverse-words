@@ -20,10 +20,8 @@ class ViewController: UIViewController  {
 //------------- waiting text in textfield and acrivate Button --------------------------
     
     @objc func textChanged(_ textField: UITextField) {
-            reverseButton.configure(isEnabled: true)
-        if inputText.text == "" {
-            reverseButton.configure(isEnabled: false)
-        }
+        reverseButton.configure(isEnabled: { inputText.text != "" }())
+       
     }
 // ------------- reverseButton func include switch with two cases -----------------------
     
