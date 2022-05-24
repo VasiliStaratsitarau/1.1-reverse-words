@@ -18,6 +18,7 @@ class ViewController: UIViewController  {
         inputText.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
     }
 //------------- waiting text in textfield and acrivate Button --------------------------
+    
     @objc func textChanged(_ textField: UITextField) {
             reverseButton.configure(isEnabled: true)
         if inputText.text == "" {
@@ -25,7 +26,9 @@ class ViewController: UIViewController  {
         }
     }
 // ------------- reverseButton func include switch with two cases -----------------------
+    
     var isButtonStart = true
+    
     @IBAction func reverseButton(_ sender: ChildButton) {
         
         if isButtonStart {
