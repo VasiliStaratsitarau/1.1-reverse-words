@@ -23,11 +23,27 @@ class __1_reverse_wordsUITests: XCTestCase {
     }
 
     func testExample() throws {
-        // UI tests must launch the application that they test.
+        
+//--- Test without accessibility identifires -----------
         let app = XCUIApplication()
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        app.textFields["Text to reverse"].tap()
+        app.textFields["Text to reverse"].typeText("Test string")
+        app.keyboards.buttons["Return"].tap()
+        app.buttons["REVERSE IT!"].tap()
+        XCTAssert(app.staticTexts["tseT gnirts"].exists)
+        app.buttons["Clear"].tap()
+
+//--- Test with storyboard accessibility identifires ---
+        
+        app.textFields["Input"].tap()
+        app.textFields["Input"].typeText("Test string")
+        app.keyboards.buttons["Return"].tap()
+        app.buttons["Reverse"].tap()
+        XCTAssert(app.staticTexts["tseT gnirts"].exists)
+        app.buttons["Clear"].tap()
+        
     }
 
     func testLaunchPerformance() throws {

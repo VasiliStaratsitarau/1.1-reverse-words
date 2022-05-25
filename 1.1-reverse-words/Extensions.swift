@@ -29,3 +29,10 @@ extension UIColor {
         return nil
     }
 }
+
+extension ViewController {
+     func textFieldShouldReturn(_ inputText: UITextField) -> Bool {
+         inputText.resignFirstResponder()
+         return true
+     }
+ }

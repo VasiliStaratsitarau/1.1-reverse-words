@@ -7,17 +7,22 @@
 
 import UIKit
 
-class ViewController: UIViewController  {
+class ViewController: UIViewController, UITextFieldDelegate  {
     
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var reverseTextView: UILabel!
     @IBOutlet weak var reverseButton: ChildButton!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        inputText.delegate = self
         inputText.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
+        inputText.accessibilityIdentifier = "Input"
+        reverseTextView.accessibilityIdentifier = "Output"
     }
-//------------- waiting text in textfield and acrivate Button --------------------------
+   
+    
+    //------------- waiting text in textfield and acrivate Button --------------------------
     
     @objc func textChanged(_ textField: UITextField) {
         reverseButton.configure(isEnabled: { inputText.text != "" }())
@@ -31,10 +36,12 @@ class ViewController: UIViewController  {
         
         if isButtonStart {
             if let text = inputText.text {
+                reverseButton.accessibilityIdentifier = "Clear"
                 reverseTextView.text = reverseWordsModule(text: text)
                 reverseButton.setTitle("Clear", for: .normal) }
         } else {
             if reverseTextView.text != "" {
+                reverseButton.accessibilityIdentifier = "Reverse"
                 inputText.text = ""
                 reverseTextView.text = ""
                 reverseButton.configure(isEnabled: false)

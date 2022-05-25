@@ -25,8 +25,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Text to reverse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5f-0I-2p1">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to reverse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5f-0I-2p1">
                                 <rect key="frame" x="0.0" y="332" width="414" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="InputText"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="YqY-hx-xls"/>
                                 </constraints>
@@ -36,6 +37,9 @@
                             </textField>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Num-IF-9Me" customClass="ChildButton" customModule="__1_reverse_words" customModuleProvider="target">
                                 <rect key="frame" x="13" y="736" width="388" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="K46-hK-9T6"/>
                                 </constraints>
@@ -60,6 +64,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjS-WX-Lkj">
                                 <rect key="frame" x="16" y="417" width="382" height="0.0"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
