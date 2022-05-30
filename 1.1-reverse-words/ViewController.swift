@@ -12,23 +12,44 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var reverseTextView: UILabel!
     @IBOutlet weak var reverseButton: ChildButton!
-        
+    //----------- 1.3 ----------------------------
+    @IBOutlet weak var ignoreTextField: UITextField!
+    @IBOutlet weak var modeSelector: UISegmentedControl!
+    //----------- 1.3 ----------------------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ignoreTextField.isHidden = true
         inputText.delegate = self
         inputText.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
+        modeSelector.addTarget(self, action: #selector(modeStatus(_:)), for: .valueChanged)
         inputText.accessibilityIdentifier = "Input"
         reverseTextView.accessibilityIdentifier = "Output"
     }
-   
     
-    //------------- waiting text in textfield and acrivate Button --------------------------
+    
+    // ------------- waiting text in textfield and acrivate Button --------------------------
+    
     
     @objc func textChanged(_ textField: UITextField) {
         reverseButton.configure(isEnabled: { inputText.text != "" }())
-       
+    
+        
     }
-// ------------- reverseButton func include switch with two cases -----------------------
+    
+    @objc func modeStatus(_ sender: UISegmentedControl) {
+        if modeSelector.selectedSegmentIndex == 0 {
+            ignoreTextField.isHidden = true
+        } else if modeSelector.selectedSegmentIndex == 1 {
+            ignoreTextField.isHidden = false
+        }
+            }
+        
+    
+    
+    
+    
+    // ------------- reverseButton func include switch with two cases -----------------------
     
     var isButtonStart = true
     
@@ -52,5 +73,11 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     }
 }
 
+extension ViewController {
+    func textFieldShouldReturn(_ inputText: UITextField) -> Bool {
+        inputText.resignFirstResponder()
+        return true
+    }
+}
 
 

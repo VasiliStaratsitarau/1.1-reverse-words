@@ -26,11 +26,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to reverse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5f-0I-2p1">
-                                <rect key="frame" x="0.0" y="332" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="246" width="414" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="InputText"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="YqY-hx-xls"/>
-                                </constraints>
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -51,19 +48,33 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reverse Words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73c-DV-aAz">
-                                <rect key="frame" x="16" y="196" width="382" height="40"/>
+                                <rect key="frame" x="16" y="96" width="382" height="40"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This application will reverse your words. Please type text below " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gz-Zu-h4K">
-                                <rect key="frame" x="33" y="252" width="347" height="40"/>
+                                <rect key="frame" x="34" y="171" width="346" height="40"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iye-Fg-FwC">
+                                <rect key="frame" x="20" y="315" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Default"/>
+                                    <segment title="Custom"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Words for ignore" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PeC-lx-zxm">
+                                <rect key="frame" x="0.0" y="381" width="414" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="InputText"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjS-WX-Lkj">
-                                <rect key="frame" x="16" y="417" width="382" height="0.0"/>
+                                <rect key="frame" x="0.0" y="450" width="414" height="0.0"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
@@ -75,25 +86,33 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JjS-WX-Lkj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="605-5G-r0O"/>
-                            <constraint firstItem="8Gz-Zu-h4K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="B7O-15-y1L"/>
-                            <constraint firstItem="73c-DV-aAz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BYb-F7-h4b"/>
-                            <constraint firstItem="8Gz-Zu-h4K" firstAttribute="top" secondItem="73c-DV-aAz" secondAttribute="bottom" constant="16" id="IDH-7i-Owa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JjS-WX-Lkj" secondAttribute="trailing" constant="16" id="Iar-qj-Uf5"/>
-                            <constraint firstItem="F5f-0I-2p1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="J1w-zo-KbK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PeC-lx-zxm" secondAttribute="trailing" id="7Le-dJ-Ilj"/>
+                            <constraint firstItem="8Gz-Zu-h4K" firstAttribute="top" secondItem="73c-DV-aAz" secondAttribute="bottom" constant="35" id="Dcg-bd-tq6"/>
+                            <constraint firstAttribute="trailing" secondItem="JjS-WX-Lkj" secondAttribute="trailing" id="EV7-ZT-E23"/>
+                            <constraint firstItem="F5f-0I-2p1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GKy-tk-NBl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Num-IF-9Me" secondAttribute="trailing" constant="13" id="KZi-2v-znF"/>
+                            <constraint firstItem="JjS-WX-Lkj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mio-Ok-FAY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Gz-Zu-h4K" secondAttribute="trailing" constant="34" id="OHb-f6-B9k"/>
+                            <constraint firstItem="8Gz-Zu-h4K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="R3Y-pC-K2h"/>
+                            <constraint firstItem="PeC-lx-zxm" firstAttribute="top" secondItem="iye-Fg-FwC" secondAttribute="bottom" constant="35" id="SxP-rF-ZWd"/>
+                            <constraint firstItem="JjS-WX-Lkj" firstAttribute="top" secondItem="PeC-lx-zxm" secondAttribute="bottom" constant="35" id="TEz-V0-but"/>
+                            <constraint firstItem="PeC-lx-zxm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WA5-AX-Q1L"/>
+                            <constraint firstItem="F5f-0I-2p1" firstAttribute="top" secondItem="8Gz-Zu-h4K" secondAttribute="bottom" constant="35" id="XeF-Zz-gOa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Num-IF-9Me" secondAttribute="bottom" constant="66" id="bVu-H5-YKM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="73c-DV-aAz" secondAttribute="trailing" constant="16" id="bdl-5j-KA5"/>
-                            <constraint firstItem="73c-DV-aAz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="152" id="cBi-a2-qH6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F5f-0I-2p1" secondAttribute="trailing" id="e7m-q1-0WH"/>
+                            <constraint firstItem="iye-Fg-FwC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dPh-o1-CmZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="73c-DV-aAz" secondAttribute="trailing" constant="16" id="dfu-92-dxe"/>
+                            <constraint firstItem="73c-DV-aAz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="eGc-iP-cVZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iye-Fg-FwC" secondAttribute="trailing" constant="20" id="hev-L5-Au1"/>
+                            <constraint firstItem="73c-DV-aAz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jKi-EM-a1T"/>
+                            <constraint firstItem="F5f-0I-2p1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nBi-gb-K7n"/>
                             <constraint firstItem="Num-IF-9Me" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="13" id="nCA-WM-VLd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Gz-Zu-h4K" secondAttribute="trailing" constant="34" id="nS2-TT-LRW"/>
-                            <constraint firstItem="JjS-WX-Lkj" firstAttribute="top" secondItem="F5f-0I-2p1" secondAttribute="bottom" constant="25" id="pds-fU-dtD"/>
-                            <constraint firstItem="F5f-0I-2p1" firstAttribute="top" secondItem="8Gz-Zu-h4K" secondAttribute="bottom" constant="40" id="slv-dM-Xch"/>
+                            <constraint firstItem="iye-Fg-FwC" firstAttribute="top" secondItem="F5f-0I-2p1" secondAttribute="bottom" constant="35" id="nhj-eB-SlP"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ignoreTextField" destination="PeC-lx-zxm" id="hDA-K8-AuD"/>
                         <outlet property="inputText" destination="F5f-0I-2p1" id="rAZ-Ft-Y19"/>
+                        <outlet property="modeSelector" destination="iye-Fg-FwC" id="PFK-Jp-ufg"/>
                         <outlet property="reverseButton" destination="Num-IF-9Me" id="74o-nd-ZQh"/>
                         <outlet property="reverseTextView" destination="JjS-WX-Lkj" id="InS-1V-lHI"/>
                     </connections>
