@@ -19,12 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ignoreTextField.isHidden = true
-        inputText.delegate = self
-        inputText.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
-        modeSelector.addTarget(self, action: #selector(modeStatus(_:)), for: .valueChanged)
-        inputText.accessibilityIdentifier = "Input"
-        reverseTextView.accessibilityIdentifier = "Output"
+        setup()
     }
     // ------------- waiting text in textfield and acrivate Button --------------------------
     @objc func textChanged(_ textField: UITextField) {
@@ -59,6 +54,14 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             }
         }
         isButtonStart.toggle()
+    }
+    func setup() {
+        ignoreTextField.isHidden = true
+        inputText.delegate = self
+        inputText.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
+        modeSelector.addTarget(self, action: #selector(modeStatus(_:)), for: .valueChanged)
+        inputText.accessibilityIdentifier = "Input"
+        reverseTextView.accessibilityIdentifier = "Output"
     }
 }
 
