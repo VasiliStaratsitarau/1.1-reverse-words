@@ -26,15 +26,9 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         inputText.accessibilityIdentifier = "Input"
         reverseTextView.accessibilityIdentifier = "Output"
     }
-    
-    
     // ------------- waiting text in textfield and acrivate Button --------------------------
-    
-    
     @objc func textChanged(_ textField: UITextField) {
         reverseButton.configure(isEnabled: { inputText.text != "" }())
-    
-        
     }
     
     @objc func modeStatus(_ sender: UISegmentedControl) {
@@ -43,12 +37,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         } else if modeSelector.selectedSegmentIndex == 1 {
             ignoreTextField.isHidden = false
         }
-            }
-        
-    
-    
-    
-    
+    }
     // ------------- reverseButton func include switch with two cases -----------------------
     
     var isButtonStart = true
