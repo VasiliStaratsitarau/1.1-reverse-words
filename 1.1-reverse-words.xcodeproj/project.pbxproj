@@ -44,7 +44,7 @@
 		FA3933FA2832E7BF00C0CFFF /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		FA3934012833EEA400C0CFFF /* ChildButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildButton.swift; sourceTree = "<group>"; };
 		FA66D3272837FE1A0006D39C /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
-		FA66D329283D053D0006D39C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../test/1.1-reverse-words/roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		FA66D329283D053D0006D39C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		FAB51D18282D844C0044BB46 /* 1.1-reverse-words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1.1-reverse-words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB51D1B282D844C0044BB46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB51D1D282D844C0044BB46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +125,7 @@
 				FAB51D24282D844E0044BB46 /* Assets.xcassets */,
 				FAB51D21282D844C0044BB46 /* Main.storyboard */,
 				FAB51D29282D844E0044BB46 /* Info.plist */,
+				FA3933FC2832E7FA00C0CFFF /* fonts */,
 			);
 			path = "1.1-reverse-words";
 			sourceTree = "<group>";
@@ -142,7 +143,6 @@
 			children = (
 				FAB51D3C282D844E0044BB46 /* __1_reverse_wordsUITests.swift */,
 				FAB51D3E282D844E0044BB46 /* __1_reverse_wordsUITestsLaunchTests.swift */,
-				FA3933FC2832E7FA00C0CFFF /* fonts */,
 			);
 			path = "1.1-reverse-wordsUITests";
 			sourceTree = "<group>";

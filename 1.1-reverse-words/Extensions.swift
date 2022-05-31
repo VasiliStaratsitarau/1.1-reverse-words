@@ -29,3 +29,9 @@ extension UIColor {
         return nil
     }
 }
+
+extension String {
+    var isLetters: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z]", options: .regularExpression) == nil
+    }
+}
