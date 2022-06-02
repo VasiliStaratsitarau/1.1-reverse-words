@@ -22,54 +22,55 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         setup()
     }
     // ------------- waiting text in textfield and acrivate Button --------------------------
-    @objc func textChanged(_ textField: UITextField) {
+    @objc func inputText(_ inputText: UITextField) {
         reverseButton.configure(isEnabled: { inputText.text != "" }())
     }
     
+    @objc func ignoreTextField(_ ignoreTextField: UITextField) {
+        reverseButton.configure(isEnabled: { ignoreTextField.text != "" }())
+    }
+    //--------------- segment control mode ---------------------------------------------------
     @objc func modeStatus(_ sender: UISegmentedControl) {
         if modeSelector.selectedSegmentIndex == 0 {
             ignoreTextField.isHidden = true
+            reverseTextView.text = ""
+            reverseButton.configure(isEnabled: { inputText.text != "" }())
         } else if modeSelector.selectedSegmentIndex == 1 {
             ignoreTextField.isHidden = false
+            reverseTextView.text = ""
+            reverseButton.configure(isEnabled: { ignoreTextField.text != "" }())
         }
     }
     // ------------- reverseButton func include switch with two cases -----------------------
     
-    var isButtonStart = true
-    
     @IBAction func reverseButton(_ sender: ChildButton) {
         
-        if isButtonStart {
-            if let text = inputText.text {
-                reverseButton.accessibilityIdentifier = "Clear"
-                reverseTextView.text = reverseWordsModule(text: text)
-                reverseButton.setTitle("Clear", for: .normal) }
-        } else {
-            if reverseTextView.text != "" {
-                reverseButton.accessibilityIdentifier = "Reverse"
-                inputText.text = ""
-                reverseTextView.text = ""
-                reverseButton.configure(isEnabled: false)
-                reverseButton.setTitle("REVERSE IT!", for: .normal)
-            }
+        if let text = inputText.text, let ignoreText = ignoreTextField.text {
+            reverseTextView.text = reverseWordsModule(text: text, ignoreText: ignoreText)
+            reverseButton.accessibilityIdentifier = "Reverse"
         }
-        isButtonStart.toggle()
+        else if
+            let text = inputText.text {
+            reverseTextView.text = reverseWordsModule(text: text, ignoreText: "")
+        }
+    
     }
+    
     func setup() {
         ignoreTextField.isHidden = true
+        ignoreTextField.delegate = self
+        ignoreTextField.accessibilityIdentifier = "CustomText"
+        ignoreTextField.addTarget(self, action: #selector(ignoreTextField(_:)), for: .editingChanged)
         inputText.delegate = self
-        inputText.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
-        modeSelector.addTarget(self, action: #selector(modeStatus(_:)), for: .valueChanged)
+        inputText.addTarget(self, action: #selector(inputText(_:)), for: .editingChanged)
         inputText.accessibilityIdentifier = "Input"
+        modeSelector.addTarget(self, action: #selector(modeStatus(_:)), for: .valueChanged)
         reverseTextView.accessibilityIdentifier = "Output"
+        
     }
 }
 
-extension ViewController {
-    func textFieldShouldReturn(_ inputText: UITextField) -> Bool {
-        inputText.resignFirstResponder()
-        return true
-    }
-}
+
+
 
 

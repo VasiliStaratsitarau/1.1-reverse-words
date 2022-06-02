@@ -84,11 +84,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FA3933FC2832E7FA00C0CFFF /* fonts */ = {
+		FA029A442847AFC500EE6AF5 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				FA3933FA2832E7BF00C0CFFF /* Roboto-Regular.ttf */,
 				FA66D329283D053D0006D39C /* Roboto-Bold.ttf */,
+				FA3933FA2832E7BF00C0CFFF /* Roboto-Regular.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 				FAB51D24282D844E0044BB46 /* Assets.xcassets */,
 				FAB51D21282D844C0044BB46 /* Main.storyboard */,
 				FAB51D29282D844E0044BB46 /* Info.plist */,
-				FA3933FC2832E7FA00C0CFFF /* fonts */,
+				FA029A442847AFC500EE6AF5 /* fonts */,
 			);
 			path = "1.1-reverse-words";
 			sourceTree = "<group>";

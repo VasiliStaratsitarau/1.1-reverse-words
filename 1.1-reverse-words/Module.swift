@@ -7,16 +7,22 @@
 //
 //import UIKit
 
-func reverseWordsModule(text: String) -> String {
+func reverseWordsModule(text: String, ignoreText: String) -> String {
+    let ignoreText = ignoreText
     
     let separateArray = text.split(separator: " ")
+    //let tempArrayAndIgnore = separateArray.rangeOfCharacter(from: ignoreText)
     var l = 0
     var tempArray = ""
     var reversedArray = [String]()
-//------------- This loop cleaninig words in array from nonAlphabet values and reverse them -----
+    //------------- This loop cleaninig words in array from nonAlphabet values and reverse them -----
     for i in 0..<separateArray.count {
-            if !text.isLetters {
+        if !text.isLetters && ignoreText.isEmpty {
             tempArray = separateArray[i].replacingOccurrences(of: "[^a-zA-Z]+", with: "", options: .regularExpression)
+            tempArray = String(tempArray.split(separator: " ").map { String($0.reversed())}.joined(separator: " "))
+        } else if !text.isLetters && !ignoreText.isEmpty  {
+            tempArray = separateArray[i].replacingOccurrences(of: ignoreText, with: "", options: .regularExpression)
+            print(tempArray)
             tempArray = String(tempArray.split(separator: " ").map { String($0.reversed())}.joined(separator: " "))
         } else {
             tempArray = String(separateArray[i].reversed())
@@ -25,8 +31,8 @@ func reverseWordsModule(text: String) -> String {
     }
     let new = Array(reversedArray.joined(separator: " "))
     var old = Array(separateArray.joined(separator: " "))
-//------------- loop for change reverse letters in initial words ignore nonAlphabet values ---
-    if !reversedArray.isEmpty {
+    //------------- loop for change reverse letters in initial words ignore nonAlphabet values ---
+    if !reversedArray.isEmpty  {
         for i in 0..<old.count {
             var d = i
             if old[d] == " " {
@@ -37,6 +43,8 @@ func reverseWordsModule(text: String) -> String {
                 l += 1
             }
         }
+    } else if ignoreText != " " {
+        //old = Array(tempArray)
     }
     return String(old)
 }

@@ -66,7 +66,7 @@
                                     <segment title="Custom"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Words for ignore" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PeC-lx-zxm">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to ignore" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PeC-lx-zxm">
                                 <rect key="frame" x="0.0" y="381" width="414" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="InputText"/>
                                 <color key="textColor" systemColor="systemGray2Color"/>
