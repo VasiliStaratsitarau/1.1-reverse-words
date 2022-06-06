@@ -12,10 +12,8 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var reverseTextView: UILabel!
     @IBOutlet weak var reverseButton: ChildButton!
-    //----------- 1.3 ----------------------------
     @IBOutlet weak var ignoreTextField: UITextField!
     @IBOutlet weak var modeSelector: UISegmentedControl!
-    //----------- 1.3 ----------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         if modeSelector.selectedSegmentIndex == 0 {
             ignoreTextField.isHidden = true
             reverseTextView.text = ""
+            ignoreTextField.text = ""
             reverseButton.configure(isEnabled: { inputText.text != "" }())
         } else if modeSelector.selectedSegmentIndex == 1 {
             ignoreTextField.isHidden = false
@@ -45,15 +44,15 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     
     @IBAction func reverseButton(_ sender: ChildButton) {
         
-        if let text = inputText.text, let ignoreText = ignoreTextField.text {
-            reverseTextView.text = reverseWordsModule(text: text, ignoreText: ignoreText)
-            reverseButton.accessibilityIdentifier = "Reverse"
+        let textIgnore = ignoreTextField.text ?? ""
+        let textInput = inputText.text ?? ""
+        
+        let reverseWords = textInput.split(separator: " ")
+        
+        for i in 0..<reverseWords.count {
+            let ready = reverse(word: String(reverseWords[i]), ignoreSet: CharacterSet(charactersIn: textIgnore))
+            reverseTextView.text?.append(ready + " ")
         }
-        else if
-            let text = inputText.text {
-            reverseTextView.text = reverseWordsModule(text: text, ignoreText: "")
-        }
-    
     }
     
     func setup() {
@@ -66,7 +65,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         inputText.accessibilityIdentifier = "Input"
         modeSelector.addTarget(self, action: #selector(modeStatus(_:)), for: .valueChanged)
         reverseTextView.accessibilityIdentifier = "Output"
-        
     }
 }
 

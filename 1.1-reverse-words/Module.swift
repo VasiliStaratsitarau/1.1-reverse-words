@@ -1,3 +1,4 @@
+import Foundation
 ////
 ////  Mudule.swift
 ////  1.1-reverse-words
@@ -7,46 +8,27 @@
 //
 //import UIKit
 
-func reverseWordsModule(text: String, ignoreText: String) -> String {
-    let ignoreText = ignoreText
-    
-    let separateArray = text.split(separator: " ")
-    //let tempArrayAndIgnore = separateArray.rangeOfCharacter(from: ignoreText)
-    var l = 0
-    var tempArray = ""
-    var reversedArray = [String]()
-    //------------- This loop cleaninig words in array from nonAlphabet values and reverse them -----
-    for i in 0..<separateArray.count {
-        if !text.isLetters && ignoreText.isEmpty {
-            tempArray = separateArray[i].replacingOccurrences(of: "[^a-zA-Z]+", with: "", options: .regularExpression)
-            tempArray = String(tempArray.split(separator: " ").map { String($0.reversed())}.joined(separator: " "))
-        } else if !text.isLetters && !ignoreText.isEmpty  {
-            tempArray = separateArray[i].replacingOccurrences(of: ignoreText, with: "", options: .regularExpression)
-            print(tempArray)
-            tempArray = String(tempArray.split(separator: " ").map { String($0.reversed())}.joined(separator: " "))
+func reverse(word: String, ignoreSet: CharacterSet) -> String {
+    guard word.count > 1 else {
+        return word
+    }
+    var arr = Array(word)
+    var start = 0
+    var end = arr.count - 1 // or arr.indices.last
+    while start < end {
+        if !arr[start].isLetter {
+            start += 1
+        }
+        if arr[start].unicodeScalars.allSatisfy(ignoreSet.contains(_:)) {
+            start += 1
+        } else if arr[end].unicodeScalars.allSatisfy(ignoreSet.contains(_:)) {
+            end -= 1
         } else {
-            tempArray = String(separateArray[i].reversed())
+            arr.swapAt(start, end)
+            start += 1
+            end -= 1
         }
-        reversedArray.append(tempArray)
     }
-    let new = Array(reversedArray.joined(separator: " "))
-    var old = Array(separateArray.joined(separator: " "))
-    //------------- loop for change reverse letters in initial words ignore nonAlphabet values ---
-    if !reversedArray.isEmpty  {
-        for i in 0..<old.count {
-            var d = i
-            if old[d] == " " {
-                d += 1
-            }
-            if old[d].isLetter  {
-                old[i] = new[l]
-                l += 1
-            }
-        }
-    } else if ignoreText != " " {
-        //old = Array(tempArray)
-    }
-    return String(old)
+    return String(arr)
 }
-
 
