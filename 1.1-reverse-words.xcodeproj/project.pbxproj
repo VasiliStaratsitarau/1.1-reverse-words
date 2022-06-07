@@ -19,7 +19,6 @@
 		FAB51D25282D844E0044BB46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB51D24282D844E0044BB46 /* Assets.xcassets */; };
 		FAB51D33282D844E0044BB46 /* __1_reverse_wordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB51D32282D844E0044BB46 /* __1_reverse_wordsTests.swift */; };
 		FAB51D3D282D844E0044BB46 /* __1_reverse_wordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB51D3C282D844E0044BB46 /* __1_reverse_wordsUITests.swift */; };
-		FAB51D3F282D844E0044BB46 /* __1_reverse_wordsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB51D3E282D844E0044BB46 /* __1_reverse_wordsUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +55,6 @@
 		FAB51D32282D844E0044BB46 /* __1_reverse_wordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __1_reverse_wordsTests.swift; sourceTree = "<group>"; };
 		FAB51D38282D844E0044BB46 /* 1.1-reverse-wordsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "1.1-reverse-wordsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB51D3C282D844E0044BB46 /* __1_reverse_wordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __1_reverse_wordsUITests.swift; sourceTree = "<group>"; };
-		FAB51D3E282D844E0044BB46 /* __1_reverse_wordsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __1_reverse_wordsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				FAB51D3C282D844E0044BB46 /* __1_reverse_wordsUITests.swift */,
-				FAB51D3E282D844E0044BB46 /* __1_reverse_wordsUITestsLaunchTests.swift */,
 			);
 			path = "1.1-reverse-wordsUITests";
 			sourceTree = "<group>";
@@ -301,7 +298,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB51D3D282D844E0044BB46 /* __1_reverse_wordsUITests.swift in Sources */,
-				FAB51D3F282D844E0044BB46 /* __1_reverse_wordsUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

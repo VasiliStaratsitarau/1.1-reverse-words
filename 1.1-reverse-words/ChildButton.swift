@@ -19,6 +19,7 @@ class ChildButton: UIButton {
     }
     
     private func setupUI() {
+        accessibilityIdentifier = "Reverse"
         layer.cornerRadius = 14
         isEnabled = false
         backgroundColor = Constant.disabledColor

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate  {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var reverseTextView: UILabel!
@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
     }
     // ------------- waiting text in textfield and acrivate Button --------------------------
     @objc func inputText(_ inputText: UITextField) {
@@ -40,19 +41,10 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             reverseButton.configure(isEnabled: { ignoreTextField.text != "" }())
         }
     }
-    // ------------- reverseButton func include switch with two cases -----------------------
+    // ------------- reverseButton func  -----------------------------------------------------
     
     @IBAction func reverseButton(_ sender: ChildButton) {
-        
-        let textIgnore = ignoreTextField.text ?? ""
-        let textInput = inputText.text ?? ""
-        
-        let reverseWords = textInput.split(separator: " ")
-        
-        for i in 0..<reverseWords.count {
-            let ready = reverse(word: String(reverseWords[i]), ignoreSet: CharacterSet(charactersIn: textIgnore))
-            reverseTextView.text?.append(ready + " ")
-        }
+        reverseTextView.text = run(textInput: inputText.text ?? "", textIgnore: ignoreTextField.text ?? "")
     }
     
     func setup() {
@@ -63,10 +55,12 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         inputText.delegate = self
         inputText.addTarget(self, action: #selector(inputText(_:)), for: .editingChanged)
         inputText.accessibilityIdentifier = "Input"
+        modeSelector.accessibilityIdentifier = "Selector"
         modeSelector.addTarget(self, action: #selector(modeStatus(_:)), for: .valueChanged)
         reverseTextView.accessibilityIdentifier = "Output"
     }
 }
+
 
 
 

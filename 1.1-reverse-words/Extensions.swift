@@ -30,12 +30,6 @@ extension UIColor {
     }
 }
 
-//extension String {
-//    var isLetters: Bool {
-//        return !isEmpty && range(of: "[^a-zA-Z]", options: .regularExpression) == nil
-//    }
-//}
-
 extension ViewController {
     func textFieldShouldReturn(_ inputText: UITextField) -> Bool {
         inputText.resignFirstResponder()

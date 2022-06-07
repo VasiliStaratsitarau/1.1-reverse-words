@@ -24,27 +24,21 @@ class __1_reverse_wordsUITests: XCTestCase {
 
     func testExample() throws {
         
-//--- Test without accessibility identifires -----------
         let app = XCUIApplication()
         app.launch()
 
-        app.textFields["Text to reverse"].tap()
-        app.textFields["Text to reverse"].typeText("Test string")
-        app.keyboards.buttons["Return"].tap()
-        app.buttons["REVERSE IT!"].tap()
-        XCTAssert(app.staticTexts["tseT gnirts"].exists)
-        app.buttons["Clear"].tap()
-
-//--- Test with storyboard accessibility identifires ---
-        
         app.textFields["Input"].tap()
         app.textFields["Input"].typeText("Test string")
         app.keyboards.buttons["Return"].tap()
         app.buttons["Reverse"].tap()
-        XCTAssert(app.staticTexts["tseT gnirts"].exists)
-        app.buttons["Clear"].tap()
-        
-    }
+        XCTAssertEqual("tseT gnirts", app.staticTexts["Output"].label)
+        app/*@START_MENU_TOKEN@*/.buttons["Custom"]/*[[".segmentedControls[\"Selector\"].buttons[\"Custom\"]",".buttons[\"Custom\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.textFields["CustomText"]/*[[".textFields[\"Text to ignore\"]",".textFields[\"CustomText\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.textFields["CustomText"].typeText("Test string")
+        app.keyboards.buttons["Return"].tap()
+        app.buttons["Reverse"].tap()
+        XCTAssertEqual("Test string", app.staticTexts["Output"].label)
+}
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
