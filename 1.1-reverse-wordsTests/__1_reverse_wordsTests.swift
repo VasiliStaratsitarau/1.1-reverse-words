@@ -11,17 +11,14 @@ import XCTest
 class __1_reverse_wordsTests: XCTestCase {
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
     func testExample() throws {
-        
-        
     }
+    
     func test_reverseWords_singleWordString() {
         let input = "Test"
         let output = "tseT"
@@ -33,6 +30,7 @@ class __1_reverse_wordsTests: XCTestCase {
         let output = "tseT gnirts"
         XCTAssertEqual(output, __1_reverse_words.run(textInput: input, textIgnore: ""))
     }
+    
     func test_reverseWords_multipleWordsStringWithIgnoreText() {
         let input = "Test string"
         let output = "tseT grtins"
@@ -40,12 +38,15 @@ class __1_reverse_wordsTests: XCTestCase {
         XCTAssertEqual(output, __1_reverse_words.run(textInput: input, textIgnore: ignoreText))
     }
     
-    
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_reverseWords_multipleWordsStringWithEmptyIgnoreText() {
+        let input = "12345 asdf"
+        let output = "54321 fdsa"
+        let ignoreText = " "
+        XCTAssertEqual(output, __1_reverse_words.run(textInput: input, textIgnore: ignoreText))
     }
     
+    func testPerformanceExample() throws {
+        self.measure {
+        }
+    }
 }

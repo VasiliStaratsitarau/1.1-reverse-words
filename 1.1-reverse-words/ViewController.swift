@@ -18,27 +18,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
     }
     // ------------- waiting text in textfield and acrivate Button --------------------------
     @objc func inputText(_ inputText: UITextField) {
-        reverseButton.configure(isEnabled: { inputText.text != "" }())
+        reverseButton.configure(isEnabled: inputText.text != "")
     }
     
     @objc func ignoreTextField(_ ignoreTextField: UITextField) {
-        reverseButton.configure(isEnabled: { ignoreTextField.text != "" }())
+        reverseButton.configure(isEnabled: ignoreTextField.text != "")
     }
     //--------------- segment control mode ---------------------------------------------------
     @objc func modeStatus(_ sender: UISegmentedControl) {
         if modeSelector.selectedSegmentIndex == 0 {
             ignoreTextField.isHidden = true
+            inputText.isEnabled = true
             reverseTextView.text = ""
             ignoreTextField.text = ""
-            reverseButton.configure(isEnabled: { inputText.text != "" }())
+            reverseButton.configure(isEnabled: (inputText.text != ""))
         } else if modeSelector.selectedSegmentIndex == 1 {
             ignoreTextField.isHidden = false
             reverseTextView.text = ""
-            reverseButton.configure(isEnabled: { ignoreTextField.text != "" }())
+            inputText.isEnabled = false
+            reverseButton.configure(isEnabled: ( ignoreTextField.text != ""))
+            if ignoreTextField.text == "" {
+                reverseButton.configure(isEnabled: false)
+            }
         }
     }
     // ------------- reverseButton func  -----------------------------------------------------
