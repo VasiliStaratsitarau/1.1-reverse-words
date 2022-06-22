@@ -9,19 +9,17 @@ import Foundation
 
 func run(textInput: String, textIgnore: String) -> String {
     var ready: String = ""
-    let ignore = textIgnore
+    let ignore = CharacterSet(charactersIn: textIgnore)
     let reverseWords = textInput.split(separator: " ")
     for i in 0..<reverseWords.count {
-        ready.append(reverse(word: String(reverseWords[i]), ignoreSet: CharacterSet(charactersIn: ignore)) + " ")
+        ready.append(reverse(word: String(reverseWords[i]), ignoreSet: ignore) + " ")
     }
     let a = ready.dropLast()
     return String(a)
 }
 
 func reverse(word: String, ignoreSet: CharacterSet) -> String {
-//    if ignoreSet.isEmpty {
-//        return .reversed()
-//    }
+    
     guard word.count > 1 else {
         return word
     }
@@ -30,7 +28,7 @@ func reverse(word: String, ignoreSet: CharacterSet) -> String {
     var end = arr.count - 1 
     
     while start < end {
-        if !arr[start].isLetter && ignoreSet.isEmpty {
+        if !arr[start].isLetter  && ignoreSet.isEmpty {
             start += 1
         } else if !arr[end].isLetter && ignoreSet.isEmpty {
             end -= 1

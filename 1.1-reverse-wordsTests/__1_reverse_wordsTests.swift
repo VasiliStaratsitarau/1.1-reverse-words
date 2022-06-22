@@ -38,10 +38,17 @@ class __1_reverse_wordsTests: XCTestCase {
         XCTAssertEqual(output, __1_reverse_words.run(textInput: input, textIgnore: ignoreText))
     }
     
-    func test_reverseWords_multipleWordsStringWithEmptyIgnoreText() {
+    func test_reverseWords_multipleWordsStringWithSpaceinIgnoreText() {
         let input = "12345 asdf"
         let output = "54321 fdsa"
         let ignoreText = " "
+        XCTAssertEqual(output, __1_reverse_words.run(textInput: input, textIgnore: ignoreText))
+    }
+    
+    func test_reverseWords_multipleWordsStringWithEmptyIgnoreText() {
+        let input = "12345 asdf"
+        let output = "12345 fdsa"
+        let ignoreText = ""
         XCTAssertEqual(output, __1_reverse_words.run(textInput: input, textIgnore: ignoreText))
     }
     
